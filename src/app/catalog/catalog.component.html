@@ -1,0 +1,3 @@
+<div *ngFor="let category of catalogService.getCatalog()?.categories">{{category.name}}
+  <button *ngFor="let item of catalogService.getItems(category.id)" (click)="cartService.addToCart(item.id)">{{item.name}}</button>
+</div>

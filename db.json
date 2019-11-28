@@ -1,0 +1,59 @@
+{
+  "catalog": {
+    "categories": [
+      {
+        "id": "1",
+        "name": "Word"
+      },
+      {
+        "id": "2",
+        "name": "Excel"
+      },
+      {
+        "id": "3",
+        "name": "Other"
+      }
+    ],
+    "items": [
+      {
+        "id": "1",
+        "name": "Базовый",
+        "category": "1",
+        "price": "800"
+      },
+      {
+        "id": "2",
+        "name": "Продвинутый",
+        "category": "1",
+        "price": "1200",
+        "onSale": "1000"
+      },
+      {
+        "id": "3",
+        "name": "Базовый",
+        "category": "2",
+        "price": "700"
+      },
+      {
+        "id": "4",
+        "name": "Продвинутый",
+        "category": "2",
+        "price": "1200"
+      },
+      {
+        "id": "5",
+        "name": "Максимальный",
+        "category": "2",
+        "price": "2000",
+        "onSale": "1999"
+      },
+      {
+        "id": "6",
+        "name": "Всё сразу",
+        "category": "3",
+        "price": "5000",
+        "onSale": "3500"
+      }
+    ]
+  }
+}

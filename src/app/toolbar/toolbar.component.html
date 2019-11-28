@@ -1,0 +1,8 @@
+<div>
+  <div class="toolbar" fxLayout="row" fxLayoutAlign="end" fxLayoutGap="30px">
+    <button routerLink="/catalog">Каталог</button>
+    <div (click)="toggleCart()" class="cart-button" [ngClass]="{'active':cartService.show}">
+      <div *ngIf="cartService.getItemCount()>0" class="cart-counter">{{cartService.getItemCount()}}</div>
+    </div>
+  </div>
+</div>

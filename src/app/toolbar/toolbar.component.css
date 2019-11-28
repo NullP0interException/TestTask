@@ -1,0 +1,33 @@
+.toolbar {
+  background: white;
+  height: 100px;
+  width: 100%;
+  padding: 30px;
+  z-index: 100;
+}
+
+.cart-button {
+  background-image: url("src/assets/icons/cart.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  width: 45px;
+  height: 32px;
+}
+
+.cart-counter {
+  transform: translateY(-5px);
+  left: 35px;
+  top: -5px;
+  user-select: none;
+  text-align: end;
+  color: black;
+}
+
+.cart-button.active {
+  background-image: url("src/assets/icons/cart_active.png");
+}
+
+.cart-button:hover{
+  cursor: pointer;
+  filter: drop-shadow(2px 4px 6px black);
+}

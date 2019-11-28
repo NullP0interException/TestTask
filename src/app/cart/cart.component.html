@@ -1,0 +1,45 @@
+<div fxLayout="row" fxLayoutAlign="end">
+  <div *ngIf="cartService.show" [@openClose] class="cart-container">
+    <div class="cart-header">
+      <div class="cart-header-left"></div>
+      <div class="cart-header-right">
+        <div>Оформление заказа</div>
+        <div class="cart-title">Корзина</div>
+      </div>
+    </div>
+    <div class="cart-list-header flex column">
+      <div class="flex">
+        <div class="cart-list-header-name mat-small">Название</div>
+        <div class="cart-list-header-price mat-small">Цена</div>
+      </div>
+      <div class="cart-list-header-line"></div>
+    </div>
+    <div *ngFor="let category of cartService.getCategories()">
+      <div class="flex align-center category-container">
+        <div class="some-icon"></div>
+        <div class="category-name">{{category.name}}</div>
+      </div>
+      <div>
+        <div *ngFor="let item of cartService.getItems(category.id)">
+          <div class="flex align-center top10">
+            <div class="item-container flex align-center">
+              <div class="some-icon left25"></div>
+              <div class="left25 mat-small">{{item.name}}</div>
+              <div class="flex-spacer"></div>
+              <div *ngIf="!item.onSale" class="price-container flex align-center justify-center">
+                <div>{{item.price}}</div>
+              </div>
+              <div *ngIf="item.onSale" class="price-on-sale-container flex column align-center space-around">
+                <div>{{item.onSale}}</div>
+                <div class="old-price">{{item.price}}</div>
+              </div>
+            </div>
+            <div class="flex-spacer"></div>
+            <div (click)="cartService.remove(item.id)" class="button-remove"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
