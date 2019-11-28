@@ -3,7 +3,8 @@ import {CatalogItem} from './catalogItem';
 
 export class Catalog {
 
-  categories: Category[];
-  items: CatalogItem[];
+  categories: Category[] = [];
+  items: CatalogItem[] = [];
+
 
 }

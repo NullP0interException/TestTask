@@ -51,6 +51,10 @@ export class CartService {
   }
 
   getCategories(): Category[] {
+    if (!this.catalogService.ready) {
+      this.catalogService.initCatalog();
+      return [];
+    }
     const categories = new ObjectSet<Category>();
     this.cart.items.forEach((f) => {
       categories.add(this.catalogService.getCategory(this.catalogService.getItem(f.id).category));

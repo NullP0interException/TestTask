@@ -13,8 +13,10 @@ export class CatalogService {
 
   private catalog: Catalog;
   private subscriber;
+  ready = false;
 
   constructor(private httpClient: HttpClient) {
+    this.catalog = new Catalog();
   }
 
   getCatalog(): Catalog {
@@ -46,6 +48,7 @@ export class CatalogService {
   initCatalog() {
     if (!this.subscriber) {
       this.subscriber = this.httpClient.get('http://localhost:3000/catalog').subscribe((f) => {
+        this.ready = true;
         this.catalog = f as Catalog;
       });
     }
